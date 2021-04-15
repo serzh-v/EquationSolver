@@ -16,6 +16,10 @@ public class Equation {
     private double x2;
     private int rootsQuantity;
     
+    /**
+     * внутренний класс, есть неявная связь между объектом внутреннего класса
+     * и объектом хозяина
+     */
     private class Discriminant {
         private double d = b * b - 4 * a * c;
         
@@ -32,6 +36,10 @@ public class Equation {
         this.D = this.new Discriminant();
     }
     
+    /**
+     * метод, присваивающий ранее созданным полям значения равные
+     * количеству корней уравнения и значения самих корней
+     */
     public void solve(){
         if (D.getD() < 0.0) {
             rootsQuantity = 0;
@@ -46,6 +54,10 @@ public class Equation {
             x2 = (-b + Math.sqrt(D.getD())) / (2 * a);
         }
     }
+    
+    /**
+     * далее описываются методы, возвращаюшие значения полей   
+     */
     public int getRootsQuantity(){
         return rootsQuantity;
     }
